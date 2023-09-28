@@ -41,6 +41,7 @@ def MP3toMP4(mp3):
 
 def publishMP4toYoutube(mp4,title):
     print("【{}】 upload {} to youtube".format(title,mp4))
+    os.system("youtubeuploader --filename {} -title='{}' -secrets=youtube-token.json -privacy=public".format(mp4,title))
     return 
 
 
@@ -74,7 +75,6 @@ def main():
             mp4 = MP3toMP4(mp3)
             if mp4:
                 publishMP4toYoutube(mp4,entry.title)
-            break
     except BrokenPipeError:
         devnull = os.open(os.devnull, os.O_WRONLY)
         os.dup2(devnull, sys.stdout.fileno())
