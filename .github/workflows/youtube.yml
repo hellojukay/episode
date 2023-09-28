@@ -15,8 +15,7 @@ jobs:
       - uses: actions/setup-go@v4
         with:
           go-version: '^1.13.1' # The Go version to download (if necessary) and use.
-      - run: github.com/porjo/youtubeuploader@latest
-      - run: github.com/porjo/youtubeuploader@latest
+      - run: go install github.com/porjo/youtubeuploader@latest
       - run: youtubeuploader -h
       - run: sudo apt update
       - run: sudo apt install ffmpeg
