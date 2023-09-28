@@ -17,7 +17,7 @@ jobs:
           go-version: '^1.13.1' # The Go version to download (if necessary) and use.
       - run: |
           go install github.com/porjo/youtubeuploader@latest
-          youtubeuploader -hr
+          youtubeuploader -h
           sudo apt install ffmpeg
           pip install feedparser
           python3 .github/upload-youtube.py
