@@ -75,6 +75,7 @@ def main():
             mp4 = MP3toMP4(mp3)
             if mp4:
                 publishMP4toYoutube(mp4,entry.title)
+            break
     except BrokenPipeError:
         devnull = os.open(os.devnull, os.O_WRONLY)
         os.dup2(devnull, sys.stdout.fileno())
