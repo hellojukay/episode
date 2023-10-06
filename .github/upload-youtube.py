@@ -36,7 +36,7 @@ def downloadMP3(url):
 
 def MP3toMP4(mp3):
     mp4 = mp3.rsplit(".", 1)[0] + ".mp4"
-    os.system("ffmpeg -loop 1 -i .github/youtube.png -i {} -vf 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:-1:-1:color=black,setsar=1,format=yuv420p'  -shortest -fflags +shortest {}".format(mp3,mp4))
+    os.system("ffmpeg -loop 1 -i .github/youtube.png -i {} -vf 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:-1:-1:color=black,setsar=1,format=yuv420p' -framerate 2 -preset  ultrafast -shortest -fflags +shortest {}".format(mp3,mp4))
     return  mp4
 
 def publishMP4toYoutube(mp4,title):
