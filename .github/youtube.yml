@@ -19,5 +19,5 @@ jobs:
       - run: youtubeuploader -h
       - run: sudo apt update
       - run: echo ${{secrets.YOUTUBE_TOKEN}}
-      - run: sudo apt install ffmpeg
-      - run: python3 .github/upload-youtube.py
+      # - run: sudo apt install ffmpeg
+      # - run: python3 .github/upload-youtube.py
