@@ -20,5 +20,5 @@ jobs:
           youtubeuploader -h
           sudo apt install ffmpeg
           pip install feedparser
-          echo ${{ secrets.YOUTUBE_TOKEN }} > youtube-token.json
+          echo ${{ secrets.YOUTUBE_TOKEN }} | base64 --decode > youtube-token.json
           python3 .github/upload-youtube.py
